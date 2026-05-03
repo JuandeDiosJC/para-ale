@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap');
+
+body {
+    background-color: #fdf5f5; /* Fondo rosa muy suave */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Evita que se formen barras de desplazamiento cuando el botón huya */
+    color: #4a3028; /* Tono café oscuro para el texto */
+    text-align: center;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    position: relative;
+    max-width: 90%;
+    z-index: 10;
+}
+
+.animation-container {
+    font-size: 50px;
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #d17878; /* Rosa/Rojizo lindo */
+}
+
+.buttons {
+    margin-top: 30px;
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#btn-yes {
+    background-color: #d17878;
+    color: white;
+    box-shadow: 0 4px 10px rgba(209, 120, 120, 0.4);
+    z-index: 2;
+}
+
+#btn-yes:hover {
+    transform: scale(1.1);
+}
+
+#btn-no {
+    background-color: #bfa398; /* Tono café con leche */
+    color: white;
+    box-shadow: 0 4px 10px rgba(191, 163, 152, 0.4);
+    position: absolute; /* Necesario para que se mueva libremente */
+    left: 60%; /* Posición inicial junto al Sí */
+}
+
+.hidden {
+    display: none !important;
+}
+
+#success-message {
+    font-size: 22px;
+    font-weight: 600;
+    color: #d17878;
+    margin-top: 20px;
+    animation: popIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
